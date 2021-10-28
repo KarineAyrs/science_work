@@ -4,13 +4,13 @@ import torchvision.transforms as transforms
 
 
 class MNIST:
-    def __init__(self, batch_size=2):
+    def __init__(self, root, batch_size):
         self.batch_size = batch_size
-        self._train_dataset = datasets.MNIST(root='dataset/', train=True, transform=transforms.ToTensor(),
+        self._train_dataset = datasets.MNIST(root=root, train=True, transform=transforms.ToTensor(),
                                              download=True)
         self._train_loader = DataLoader(dataset=self._train_dataset, batch_size=batch_size, shuffle=True)
 
-        self._test_dataset = datasets.MNIST(root='dataset/', train=False, transform=transforms.ToTensor(),
+        self._test_dataset = datasets.MNIST(root=root, train=False, transform=transforms.ToTensor(),
                                             download=True)
         self._test_loader = DataLoader(dataset=self._test_dataset, batch_size=batch_size, shuffle=True)
 

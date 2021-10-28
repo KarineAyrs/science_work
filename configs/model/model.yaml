@@ -1,0 +1,6 @@
+model:
+  model_name: ['efficientnet_b0', 'resnet34', 'vit_tiny_patch16_224']
+  learning_rate: 0.001
+  num_epochs: 5
+  batch_size: 2
+  pretrained: 1

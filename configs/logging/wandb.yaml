@@ -1,0 +1,4 @@
+wandb:
+  project_name: 'mnist_classification'
+  log: 'all'
+  log_freq: 10

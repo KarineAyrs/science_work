@@ -1,0 +1,7 @@
+defaults:
+  - _self_
+  - logging/wandb
+  - model/model
+  - datasets/datasets
+
+#debug: false

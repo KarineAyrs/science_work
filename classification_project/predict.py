@@ -1,11 +1,12 @@
 import torch
+import wandb
 
 
 def check_accuracy(loader, model):
-    if loader.dataset.train:
-        print('Checking accuracy on training data')
-    else:
-        print('Checking accuracy o test data')
+    msg = 'train' if loader.dataset.train else 'test'
+
+    print('Checking accuracy on ' + msg + ' data')
+
     num_correct = 0
     num_samples = 0
     model.model.eval()
@@ -28,4 +29,8 @@ def check_accuracy(loader, model):
         print(
             f'Got {num_correct}/{num_samples} with accuracy {(float(num_correct) / float(num_samples)) * 100}')
 
+        wandb.log({msg + '_accuracy': float(num_correct) / float(num_samples)})
+
+    torch.onnx.export(model, x, 'model.onnx')
+    wandb.save('model.onnx')
     model.model.train()

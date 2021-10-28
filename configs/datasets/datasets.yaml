@@ -1,0 +1,3 @@
+ds:
+  root: 'dataset/'
+  batch_size: 2

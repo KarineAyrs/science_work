@@ -1,3 +1,6 @@
 timm
 torch
 torchvision
+hydra-core
+wandb
+omegaconf

@@ -22,6 +22,5 @@ def run(cfg: DictConfig):
     check_accuracy(test_loader, model)
 
 
-
 if __name__ == '__main__':
     run()

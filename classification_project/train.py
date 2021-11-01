@@ -6,7 +6,7 @@ import hydra
 from omegaconf import DictConfig
 
 
-@hydra.main(config_path=r"..\configs", config_name="config")
+@hydra.main(config_path=r"../configs", config_name="config")
 def run(cfg: DictConfig):
     model = TimmModel(model_name=cfg.model.model.model_name[2], pretrained=cfg.model.model.pretrained,
                       learning_rate=cfg.model.model.learning_rate, batch_size=cfg.model.model.batch_size,

@@ -5,7 +5,6 @@ RUN apt -y update
 RUN apt -y install python3-pip
 WORKDIR /project
 ENV HYDRA_FULL_ERROR=1
-ENV WANDB_API_KEY=2a5b9d6814f451ddc688204d3e0f23703c4ccce3
 ENV WANDB_MODE=online
 COPY . .
 RUN ls
